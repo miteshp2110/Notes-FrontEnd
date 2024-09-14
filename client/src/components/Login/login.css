@@ -1,0 +1,74 @@
+
+
+.login_container{
+    
+    height: calc(100vh - 40vh);
+   
+    
+    
+    display: flex;
+    justify-content: center;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.login_form{
+    
+    background-color: black;
+    border-radius: 15px;
+    padding: 5px;
+    width: 20%;
+    padding-inline:2em ;
+    display: flex;
+    
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 12vh
+
+
+}
+
+
+
+.button.green_hover:hover{
+    background-color: #58fa5e;
+    color: white;
+}
+
+.button_container{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.button.register{
+
+    margin-top: 5vh;
+    background: none;
+    color: white;
+}
+
+.button.register:hover{
+    background: none;
+    color: #58fa5e;
+    cursor: pointer;
+}
+.email_error{
+    color: red;
+    font-size: medium; 
+    margin-top: 2vh; 
+    text-align: left; 
+    
+    margin-left: 0.5vw;
+    position: absolute;
+    
+}
+
+.email_div{
+    width: 100%;
+}
+

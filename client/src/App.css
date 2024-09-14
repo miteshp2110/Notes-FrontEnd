@@ -1,0 +1,25 @@
+.main_container{
+  margin-top: 5em;
+  padding-inline: 2.2em;
+}
+
+.input_field{
+  background-color: white;
+    color: black;
+      /* Light grey border */
+    border-radius: 10px;     /* Rounded corners */
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    outline: none;           /* Removes default outline */
+    width: 100%;             /* Adjust width as needed */
+    box-sizing: border-box;  /* Ensures padding doesn't affect width */
+    transition: border-color 0.3s ease; /* Smooth border transition */
+  
+    font-family: "SUSE-BOLD";
+  
+  }
+  
+  .input_field:focus {
+      border-color: #4caf50;   /* Green border on focus */
+    }

@@ -1,0 +1,11 @@
+.login_container{
+    height: fit-content;
+    
+    padding-top: 5vh;
+
+}
+.login_form{
+    padding-top:4vh ;
+    row-gap: 10vh;
+    padding-bottom: 4vh;
+}
