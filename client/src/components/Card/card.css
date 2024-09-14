@@ -1,0 +1,46 @@
+.noteCard{
+    background-color: black;
+    color: white;
+    height: fit-content;
+    padding: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    width: fit-content;
+    border-radius: 2em;
+    
+    text-align: justify;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3vh;
+
+    
+}
+
+.cardTitle{
+    font-size: 2.5em;
+    font-family: 'SUSE-BOLD';
+    color: rgb(246, 246, 71);
+}
+
+.cardDescription{
+    font-size: medium;
+    font-family: "SUSE-BOLD";
+    height: fit-content;
+    max-height: 25vh;
+    overflow: hidden;
+    
+    
+}
+
+.logo_container{
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    column-gap: 1vw;
+    
+}
+
+svg:hover{
+    cursor: pointer;
+}

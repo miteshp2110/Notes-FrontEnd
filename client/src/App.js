@@ -1,9 +1,12 @@
 
 import './App.css';
+import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 
 import Navbar from './components/NavBar/Navbar';
 import SignUp from './components/Signup/SignUp';
+
+
 
 
 function App() {
@@ -12,7 +15,9 @@ function App() {
       <Navbar/>
       <div className='main_container'>
         {/* <Login /> */}
-        <SignUp />
+        {/* <SignUp /> */}
+        <Home/>
+        
       </div>
     </>
   );
