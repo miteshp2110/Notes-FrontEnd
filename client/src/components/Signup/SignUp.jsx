@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './signup.css'
+import {Link} from 'react-router-dom'
 
 const SignUp=()=>{
     const [email,setEmail]=useState('')
@@ -42,7 +43,7 @@ const SignUp=()=>{
 
                     <div className='button_container'>
                     <button className='button green_hover'>Register</button>
-                    <a id='login_button' className='button green_hover register'>Login</a>
+                    <Link to='/login' id='login_button' className='button green_hover register'>Login</Link>
                     
                     </div>
 

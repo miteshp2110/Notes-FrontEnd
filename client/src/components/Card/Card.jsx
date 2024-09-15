@@ -4,7 +4,11 @@ import './card.css'
 
 
 const Card=(props)=>{
+    const obj_id=props.id
+    const title=props.title
+    const description=props.description
 
+    
     const handle=()=>{
         console.log("click ")
     }

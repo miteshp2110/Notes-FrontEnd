@@ -1,7 +1,32 @@
-.main_container{
-  margin-top: 5em;
-  padding-inline: 2.2em;
+/* Hide scrollbar globally but allow scrolling */
+*::-webkit-scrollbar {
+  display: none;
 }
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.main_container{
+  margin-top: 3.5em;
+  /* background-color: #4caf50; */
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+a {
+  color: inherit; /* Keeps the link color same as surrounding text */
+  text-decoration: none; /* Optional: removes underline */
+}
+
+a:visited {
+  color: inherit; /* Keeps the link color same as surrounding text */
+}
+
+
 
 .input_field{
   background-color: white;

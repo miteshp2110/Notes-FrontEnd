@@ -4,7 +4,7 @@
     
     height: calc(100vh - 40vh);
    
-    
+    margin-top: 100px;
     
     display: flex;
     justify-content: center;

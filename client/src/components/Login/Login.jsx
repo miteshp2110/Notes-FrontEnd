@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import {Link} from 'react-router-dom'
 import './login.css'
 
 const Login=()=>{
@@ -36,7 +37,7 @@ const Login=()=>{
 
                         <div className='button_container'>
                         <button className='button green_hover'>Login</button>
-                        <a id='register_button' className='button green_hover register'>Register</a>
+                        <Link to ='/signup' id='register_button' className='button green_hover register'>Register</Link>
                         
                         </div>
 

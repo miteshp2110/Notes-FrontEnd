@@ -5,7 +5,8 @@
     padding: 1em;
     padding-top: 2em;
     padding-bottom: 2em;
-    width: fit-content;
+    width: 30vw;
+    padding-right: 0.5vw;
     border-radius: 2em;
     
     text-align: justify;
@@ -13,6 +14,8 @@
     display: flex;
     flex-direction: column;
     row-gap: 3vh;
+    margin-bottom: 10px;
+
 
     
 }
@@ -28,7 +31,7 @@
     font-family: "SUSE-BOLD";
     height: fit-content;
     max-height: 25vh;
-    overflow: hidden;
+    overflow: scroll;
     
     
 }
