@@ -13,7 +13,7 @@ import AuthContext, { AuthProvider } from './Contexts/Authcontext';
 
 function App() {
   const {loginState} = useContext(AuthContext)
-  console.log(loginState)
+  
   return (
     <>
     <Router>

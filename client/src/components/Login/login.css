@@ -62,7 +62,7 @@
     font-size: medium; 
     margin-top: 2vh; 
     text-align: left; 
-    
+    visibility: hidden;
     margin-left: 0.5vw;
     position: absolute;
     

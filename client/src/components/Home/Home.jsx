@@ -1,10 +1,14 @@
+import { useContext } from 'react'
 import Card from '../Card/Card'
 import './home.css'
 
 import Masonry from 'react-masonry-css'
+import AuthContext from '../../Contexts/Authcontext'
+import refreshToken from '../../services/RefreshToken'
 
 
 const Home = ()=>{
+    const {username,email,token} = useContext(AuthContext)
 
     const breakpoints={
         default:3,
@@ -15,7 +19,11 @@ const Home = ()=>{
         <>
         <div className="homeContainer">
             <div className="buttonContainer">
-            <button className='button_add'>Add Note</button>
+            <button className='button_add' onClick={async()=>{
+                const response = await refreshToken(email,token)
+
+                console.log(response)
+            }}>Add Note</button>
             
             </div>
             <div className='below_Button'>
