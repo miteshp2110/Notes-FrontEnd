@@ -1,4 +1,4 @@
-import postRequest from "../utils/apiRequest";
+import {postRequest} from "../utils/apiRequest";
 
 const registerEndpoint = 'authrefreshToken'
 
@@ -8,10 +8,19 @@ async function refreshToken(email,token) {
         "token":token
     }
 
-    const response = await postRequest(registerEndpoint,payload,undefined)
+   try{
+        const response = await postRequest(registerEndpoint,payload,undefined)
+
+        // console.log("reponse: ",response)
 
 
-    return response
+        return response
+
+   }
+   catch(error){
+        // console.log("error: ",error.response)
+        return error.response
+   }
     
 }
 

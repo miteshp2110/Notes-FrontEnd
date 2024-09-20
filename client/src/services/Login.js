@@ -1,4 +1,4 @@
-import postRequest from "../utils/apiRequest";
+import {postRequest} from "../utils/apiRequest";
 
 const registerEndpoint = 'authlogin'
 
