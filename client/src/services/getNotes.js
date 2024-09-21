@@ -1,6 +1,6 @@
 
 
-import {postHeaderRequest, postRequest} from '../utils/apiRequest'
+import {postHeaderRequest} from '../utils/apiRequest'
 import refreshToken from './RefreshToken'
 
 const registerEndpoint= 'noteall'

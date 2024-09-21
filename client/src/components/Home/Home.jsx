@@ -10,6 +10,11 @@ const Home = ()=>{
     const [notes,setNotes] = useState(['a'])
     const [loadingState,setLoadingState] = useState(true)
 
+
+    const addNote = () =>{
+        
+    }
+
     
     useEffect(() => {
         const fetchNotes = async () => {
