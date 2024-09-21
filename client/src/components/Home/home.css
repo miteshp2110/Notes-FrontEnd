@@ -7,6 +7,7 @@
     row-gap: 6vh;
     margin-top: 3.5em;
     
+    
 }
 
 .button_add{
@@ -39,10 +40,12 @@
     width: 100%;
     /* background-color: violet; */
     /* justify-content: space-between; */
+    
   }
   .my-masonry-grid_column {
     padding-left: 10px; 
     /* background-color: steelblue; */
+    
     
   }
 .below_Button{
@@ -78,4 +81,73 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
  }
+
+
+.masonry_Container{
+    /* filter: blur(10px); */
+    transition: all ease-in-out 0.3s;
+    
+    
+
+}
+
+.dialogeBox{
+    background-color: rgb(238, 238, 238);
+    position: fixed;
+    z-index: 100;
+    height: 55vh;
+    width: 25vw;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: center;
+    display: flex;
+    margin-top: 15vh;
+    /* visibility: hidden; */
+    font-family: 'SUSE-BOLD';
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2vh;
+    transition: all ease-in-out 0.3s;
+    visibility: hidden;
+}
+
+.closeDialogeButton{
+    align-self: flex-start;
+
+    transition: all ease-in-out 0.2s;
+}
+
+.closeDialogeButton:hover{
+    cursor: pointer;
+    color: red;
+    transition: all ease-in-out 0.2s;
+}
+
+.titleInput{
+    font-size: 2.2em;
+    width: 50%;
+    padding: 1px;
+    border-radius: 10px;
+    padding-left: 5px;
+    
+}
+
+#newDescription{
+    resize: none;
+    width: 95%;
+    height: 50%;
+    margin-top: 2vh;
+}
+
+.buttonAdd{
+    margin-top: 2vh;
+    transition: all ease-in-out 0.2s;
+    
+}
+
+.buttonAdd:hover{
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    color: greenyellow;
+}
 

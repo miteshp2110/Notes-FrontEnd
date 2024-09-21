@@ -4,14 +4,44 @@ import './home.css'
 import Masonry from 'react-masonry-css'
 import AuthContext from '../../Contexts/Authcontext'
 import getUserNotes from '../../services/getNotes'
+import addNewNote from '../../services/addNotes'
 
 const Home = ()=>{
     const {username,email,token,logout,setAuthToken} = useContext(AuthContext)
     const [notes,setNotes] = useState(['a'])
     const [loadingState,setLoadingState] = useState(true)
+    const masonryContainer = document.getElementById('mContainer')
+    const homeContainer = document.getElementById("homeContainer")
+    const dBox = document.getElementById('dBox')
+    const newTitle = document.getElementById('newTitle')
+    const newDescription = document.getElementById('newDescription')
 
 
-    const addNote = () =>{
+    const addNote = async() =>{
+
+        // console.log("new:",newTitle.value)
+
+        // console.log(newDescription.value)
+        const note = {
+         
+            "title":newTitle.value,
+            "description":newDescription.value
+    
+        }
+
+        await addNewNote(email,token,note)
+        
+        
+    }
+
+    const openDialog=()=>{
+        masonryContainer.style.filter = 'blur(10px)'
+        dBox.style.visibility = 'visible'
+        
+    }
+    const closeDialog=()=>{
+        masonryContainer.style.filter = 'blur(0px)'
+        dBox.style.visibility = 'hidden'
         
     }
 
@@ -52,15 +82,17 @@ else{
 
     return (
         <>
-        <div className="homeContainer">
+        <div className="homeContainer" id='homeContainer'>
             <div className="buttonContainer">
             <button className='button_add' onClick={async()=>{
-                console.log("Add Button")
+                openDialog()
+                // addNote()
+                
             }}>Add Note</button>
             
             </div>
             <div className='below_Button'>
-            <div className='masonry_Container'>
+            <div className='masonry_Container' id='mContainer'>
 
             <Masonry
              breakpointCols={breakpoints}
@@ -79,7 +111,25 @@ else{
             </Masonry>
             </div>
             </div>
+
+            <form className="dialogeBox" id='dBox'>
+
+                <div className='closeDialogeButton' onClick={()=>{closeDialog()}}>
+                    close
+                </div>
+                
+                <input type='text' className='titleInput' maxLength='9' placeholder='Title' id='newTitle' required/>
+
+                <textarea  id='newDescription' placeholder='Description Goes Here ...' required></textarea>
+
+                <button  className='button buttonAdd' onClick={async()=>{addNote()}}  >Add</button>
+
+                
+            
+            </form>
         </div>
+
+        
         </>
     )
 }
