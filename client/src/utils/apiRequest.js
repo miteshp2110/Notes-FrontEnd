@@ -2,7 +2,7 @@ import axios, { AxiosError } from 'axios'
 
 
 
-const url= 'http://127.0.0.1:49254/'
+const url= 'http://127.0.0.1:55823/'
 
 export async function postHeaderRequest(endpoint,payload,token) {
     try{
@@ -88,6 +88,39 @@ export async function deleteRequest(endpoint,payload,token) {
         return res
     }
     
+}
+
+
+
+
+export async function putHeaderRequest(endpoint,payload,token) {
+    try{
+        const final_url=url+endpoint
+    
+        const response = await axios.put(final_url,payload,
+
+            {
+                headers: {
+                  'Authorization': `Bearer ${token}`
+                }
+            }
+        );
+        const res={
+            'Error':false,
+            'Response':response
+        }
+        return res
+
+    }
+    catch (error){
+        
+        //console.log("error: ",error.response.data)
+        const res= {
+            "Error":true,
+            "Response":error.response
+        }
+        return res
+    }
 }
 
 

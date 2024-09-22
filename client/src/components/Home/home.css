@@ -111,6 +111,26 @@
     visibility: hidden;
 }
 
+.dialogeBox2{
+    background-color: rgb(238, 238, 238);
+    position: fixed;
+    z-index: 100;
+    height: 55vh;
+    width: 25vw;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: center;
+    display: flex;
+    margin-top: 15vh;
+    /* visibility: hidden; */
+    font-family: 'SUSE-BOLD';
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2vh;
+    transition: all ease-in-out 0.3s;
+    visibility: hidden;
+}
+
 .closeDialogeButton{
     align-self: flex-start;
 
@@ -132,7 +152,7 @@
     
 }
 
-#newDescription{
+.descriptionInput{
     resize: none;
     width: 95%;
     height: 50%;
@@ -149,5 +169,8 @@
     cursor: pointer;
     transition: all ease-in-out 0.2s;
     color: greenyellow;
+}
+#objectId{
+    display: none;
 }
 

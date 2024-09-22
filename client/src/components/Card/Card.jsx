@@ -5,19 +5,32 @@ import './card.css'
 import AuthContext from '../../Contexts/Authcontext'
 import deleteNote from '../../services/deletNote'
 
-import { useNavigate } from 'react-router-dom'
+
 
 
 const Card=(props)=>{
 
     const {token} = useContext(AuthContext)
 
-    const navigate= useNavigate()
     
     const [obj_id,setobj_id] = useState(props.props._id)
     const [title,setTitle] = useState(props.props.title)
     const [description,setDescription] = useState(props.props.description)
-    
+    const masonryContainer = document.getElementById('mContainer')
+    const dBox = document.getElementById('dBox2')
+
+    const editTitle = document.getElementById('editTitle')
+    const editDescription = document.getElementById('editDescription')
+    const objectId = document.getElementById('objectId')
+
+    const openDialog=(title,description,id)=>{
+        editTitle.value=title
+        editDescription.value=description
+        objectId.value=id
+        masonryContainer.style.filter = 'blur(10px)'
+        dBox.style.visibility = 'visible'
+        
+    }
     
     const getId = ()=>{
         return obj_id
@@ -27,16 +40,14 @@ const Card=(props)=>{
     // console.log("asdad",obj_id,title,description)
     
     const handleEdit=()=>{
-        console.log("update for ")
-        console.log(title)
-        console.log(description)
+       
+        
+
+        openDialog(title,description,getId())
     }
 
     const handleDelete= async() =>{
-        // console.log("delete for ")
-        // console.log(title)
-        // console.log(description)
-        // console.log(obj_id)
+
 
         const res=await deleteNote(obj_id,token)
 

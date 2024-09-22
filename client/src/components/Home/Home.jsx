@@ -5,6 +5,7 @@ import Masonry from 'react-masonry-css'
 import AuthContext from '../../Contexts/Authcontext'
 import getUserNotes from '../../services/getNotes'
 import addNewNote from '../../services/addNotes'
+import editANote from '../../services/editNote'
 
 const Home = ()=>{
     const {username,email,token,logout,setAuthToken} = useContext(AuthContext)
@@ -15,6 +16,10 @@ const Home = ()=>{
     const dBox = document.getElementById('dBox')
     const newTitle = document.getElementById('newTitle')
     const newDescription = document.getElementById('newDescription')
+    const dBox2 = document.getElementById('dBox2')
+    const editTitle = document.getElementById('editTitle')
+    const editDescription = document.getElementById('editDescription')
+    const objectId = document.getElementById('objectId')
 
 
     const addNote = async() =>{
@@ -34,6 +39,14 @@ const Home = ()=>{
         
     }
 
+    const editNote = async() =>{
+        const oid=objectId.value
+        const tt=editTitle.value
+        const descE = editDescription.value
+        await editANote(oid,tt,descE,token)
+
+    }
+
     const openDialog=()=>{
         masonryContainer.style.filter = 'blur(10px)'
         dBox.style.visibility = 'visible'
@@ -42,6 +55,11 @@ const Home = ()=>{
     const closeDialog=()=>{
         masonryContainer.style.filter = 'blur(0px)'
         dBox.style.visibility = 'hidden'
+        
+    }
+    const closeDialog2=()=>{
+        masonryContainer.style.filter = 'blur(0px)'
+        dBox2.style.visibility = 'hidden'
         
     }
 
@@ -120,9 +138,32 @@ else{
                 
                 <input type='text' className='titleInput' maxLength='9' placeholder='Title' id='newTitle' required/>
 
-                <textarea  id='newDescription' placeholder='Description Goes Here ...' required></textarea>
+                <textarea  id='newDescription' 
+                className='descriptionInput'
+                placeholder='Description Goes Here ...' required></textarea>
 
                 <button  className='button buttonAdd' onClick={async()=>{addNote()}}  >Add</button>
+
+                
+            
+            </form>
+
+
+            <form className="dialogeBox2" id='dBox2'>
+
+                <div className='closeDialogeButton' onClick={()=>{closeDialog2()}}>
+                    close
+                </div>
+                
+                <input type='text' className='titleInput' maxLength='9' placeholder='Title' id='editTitle' required/>
+
+                <textarea  id='editDescription' 
+                className='descriptionInput'
+                placeholder='Description Goes Here ...' required></textarea>
+
+                <input id='objectId' type='text'></input>
+
+                <button  className='button buttonAdd' onClick={async()=>{editNote()}}  >Edit</button>
 
                 
             
